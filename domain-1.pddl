@@ -36,74 +36,14 @@
   )
 
   (:action weigh
-    :parameters (?obj - weighable ?c - cell)
-    :precondition (and (weighable_item ?obj) (holding ?obj) (weighing_scale ?c) (at ShopBot ?c))
-    :effect (and (item_weighed ?obj))
+    :parameters (?obj - ShoppingItem ?x - AisleCells ?y - WeighingScale)
+    :precondition (and (weighable ?obj) (holding ShopBot) (hold ShopBot ?obj) (at ShopBot ?x) (weighing_scale ?y) (adjacent ?x ?y))
+    :effect (and (item_weighed ?obj) (not(weighable ?obj)))
   )
 
   (:action check_out
-    :parameters (?obj - item ?c - cell)
-    :precondition (and (at ?obj ?c) (checkout_stand ?c) (at ShopBot ?c) (not (holding ?obj)) (or (nonweighable ?obj) (and (weighable ?obj) (item_weighed ?obj))))
-    :effect (and (item_checked_out ?obj))
-  )
-)
-
-
-
-
-
-
-
-
-
-
-(define (domain supermarket)
-  (:requirements :strips :typing)
-  (:types
-    cell item - object
-    weighable nonweighable - item
-  )
-
-  (:predicates
-    (aisle ?c - cell)
-    (shelf ?c - cell)
-    (weighing_scale ?c - cell)
-    (checkout_stand ?c - cell)
-    (connected ?c1 ?c2 - cell)
-    (at ?obj - object ?c - cell)
-    (holding ?obj - item)
-    (weighable_item ?obj - weighable)
-    (item_weighed ?obj - weighable)
-    (item_checked_out ?obj - item)
-  )
-
-  (:action move
-    :parameters (?from ?to - cell)
-    :precondition (and (aisle ?from) (aisle ?to) (connected ?from ?to) (at ShopBot ?from))
-    :effect (and (at ShopBot ?to) (not (at ShopBot ?from)))
-  )
-
-  (:action pick_up
-    :parameters (?obj - item ?c - cell)
-    :precondition (and (at ?obj ?c) (at ShopBot ?c) (not (holding ?obj)))
-    :effect (and (holding ?obj) (not (at ?obj ?c)))
-  )
-
-  (:action drop
-    :parameters (?obj - item ?c - cell)
-    :precondition (and (holding ?obj) (at ShopBot ?c))
-    :effect (and (not (holding ?obj)) (at ?obj ?c))
-  )
-
-  (:action weigh
-    :parameters (?obj - weighable ?c - cell)
-    :precondition (and (weighable_item ?obj) (holding ?obj) (weighing_scale ?c) (at ShopBot ?c))
-    :effect (and (item_weighed ?obj))
-  )
-
-  (:action check_out
-    :parameters (?obj - item ?c - cell)
-    :precondition (and (at ?obj ?c) (checkout_stand ?c) (at ShopBot ?c) (not (holding ?obj)) (or (nonweighable ?obj) (and (weighable ?obj) (item_weighed ?obj))))
-    :effect (and (item_checked_out ?obj))
+    :parameters (?obj - ShoppingItem ?x - AisleCells ?c - CheckoutStand)
+    :precondition (and (at ShopBot ?x) (checkout_stand ?c) (at ?obj ?c) (not(holding ShopBot)) (not(weighable ?obj)))
+    :effect (and (checked_out ?obj) (at ?obj ?c))
   )
 )
