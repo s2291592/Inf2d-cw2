@@ -25,7 +25,7 @@
       (holding ?bot - shopbot) ;; ShopBot is holding an item
       (hold ?bot - shopbot ?item - ShoppingItem) ;; hold the item
       (weighable ?item - ShoppingItem) ;; Item can be weighed
-      (check_out ?item - ShoppingItem) ;; Item has been checked out 
+      (checked_out ?item - ShoppingItem) ;; Item has been checked out 
   )
 
 
