@@ -21,7 +21,7 @@
       (at_bot ?bot - shopbot ?pos - position)
       (at_location ?loc - location ?pos - position)
       (adjacent ?x ?y - position)
-      (Clear AisleCells)
+      (Clear ?ac - AisleCells)
       (holding ?bot - shopbot) ;; ShopBot is holding an item
       (hold ?bot - shopbot ?item - ShoppingItem) ;; hold the item
       (weighable ?item - ShoppingItem) ;; Item can be weighed
