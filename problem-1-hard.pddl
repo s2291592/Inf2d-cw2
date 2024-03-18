@@ -103,5 +103,6 @@
         (checked_out ToothPaste)
         (checked_out Pizza)
         (at_bot ShopBot p27)
+        (at_item Ice_Lolly p12) (at_item Pizza p13) (at_item Bread p14) (at_item ToothPaste p37) (at_item Ketchup p47)
     ))
 )
