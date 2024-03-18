@@ -1,5 +1,5 @@
-(define (problem block-problem)
-    (:domain blocks-world)
+(define (problem supermarket-problem)
+    (:domain supermarket)
     (:objects 
         p11 p12 p13 p14 p15 p16
         p21 p22 p23 p24 p25 p26 p27
