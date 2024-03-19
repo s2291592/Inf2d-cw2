@@ -4,7 +4,7 @@
 
 
         Ice_Lolly Pizza Cabbage Potato ToothPaste Shampoo Bread Ketchup - ShoppingItem
-        AisleCells shelves WeighingScale CheckoutStand - location
+        AisleCells shelves WeighingScale CheckoutStand BasketPlace - location
         shelf1 shelf2 shelf3 shelf4 shelf5 shelf6 shelf7 shelf8 - shelves
 
 
