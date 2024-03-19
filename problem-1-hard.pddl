@@ -73,7 +73,7 @@
         (checked_out Ketchup)
         (checked_out ToothPaste)
         (checked_out Pizza)
-        (checked_out Ice_Lolly)
+        (at_item Shampoo shelf7)
         (at_item Ice_Lolly a8)
         (at ShopBot a8)
     ))
