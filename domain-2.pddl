@@ -7,9 +7,9 @@
 
   (:types 
   AisleCells shelves WeighingScale CheckoutStand BasketPlace - location
+  basket
   shopbot 
   ShoppingItem
-  basket
   )
 
 
@@ -18,14 +18,14 @@
 
   (:predicates
       (at_item ?item - ShoppingItem ?loc - location) ;; ShoppingItem is at a location: shelf or aisle cell
-      (at_basket ?bas - basket ?loc - location)
       (at ?bot - shopbot ?ac - AisleCells)
       (adjacent ?x - AisleCells ?y - location) ;; adjacent AisleCells or shelf 
-      (Clear ?ac - AisleCells) ;; can move to there if clean
       (holding ?bot - shopbot) ;; ShopBot is holding an item
       (hold_basket ?bot - shopbot)
       (hold ?bot - shopbot ?item - ShoppingItem) ;; hold the item
+      (hold_in ?b - basket ?item - ShoppingItem)
       (weighable ?item - ShoppingItem) ;; Item can be weighed
+      (basket_ready_check ?b - basket)
       (checked_out ?item - ShoppingItem) ;; Item has been checked out 
   )
 
@@ -41,57 +41,67 @@
 
   (:action MOVE
       :parameters (?from - AisleCells ?to - AisleCells)
-      :precondition (and (at ShopBot ?from) (adjacent ?from ?to) (Clear ?to) (not (Clear ?from)))
-      :effect (and (at ShopBot ?to) (Clear ?from) (not (at ShopBot ?from)) (not (Clear ?to)))
-  )
-
-  (:action use_basket
-    :parameters (?x - AisleCells ?y - BasketPlace)
-    :precondition (and (at ShopBot ?x) (adjacent ?x ?y) (not (holding ShopBot)))
-    :effect (and (holding ShopBot) (hold_basket ShopBot))
-  )
-
-  (:action pick_up_with_basket
-    :parameters (?item - ShoppingItem ?x - AisleCells ?y - shelves)
-    :precondition (and (at ShopBot ?x) (at_item ?item ?y) (adjacent ?x ?y)) (hold_basket ShopBot)
-    :effect (and (holding ShopBot) (hold ShopBot ?item))
-  )
-
-  (:action pick_up_ac
-    :parameters (?item - ShoppingItem ?x - AisleCells ?y - AisleCells)
-    :precondition (and (at ShopBot ?x) (at_item ?item ?y) (adjacent ?x ?y) (not (Clear ?y)) (not (holding ShopBot)))
-    :effect (and (holding ShopBot) (hold ShopBot ?item) (Clear ?y) (not (at_item ?item ?y)))
+      :precondition (and (at ShopBot ?from) (adjacent ?from ?to))
+      :effect (and (at ShopBot ?to) (not (at ShopBot ?from)))
   )
 
 
 
-  (:action pick_up_shelves
-    :parameters (?item - ShoppingItem ?x - AisleCells ?y - shelves)
+  (:action pick_up
+    :parameters (?item - ShoppingItem ?x - AisleCells ?y - location)
     :precondition (and (at ShopBot ?x) (at_item ?item ?y) (adjacent ?x ?y) (not (holding ShopBot)))
-    :effect (and (holding ShopBot) (hold ShopBot ?item))
+    :effect (and (holding ShopBot) (hold ShopBot ?item) (not (at_item ?item ?y)))
   )
 
 
 
   (:action drop
-    :parameters (?item - ShoppingItem ?x - AisleCells ?y - AisleCells)
-    :precondition (and (at ShopBot ?x) (Clear ?y) (adjacent ?x ?y) (holding ShopBot) (hold ShopBot ?item))
-    :effect (and (at_item ?item ?y) (at ShopBot ?x) (not (holding ShopBot)) (not (Clear ?y)))
+    :parameters (?item - ShoppingItem ?x - AisleCells ?y - location)
+    :precondition (and (at ShopBot ?x) (adjacent ?x ?y) (holding ShopBot) (hold ShopBot ?item))
+    :effect (and (at_item ?item ?y) (at ShopBot ?x) (not (holding ShopBot)) (not (hold ShopBot ?item)))
   )
+
+
+  (:action use_basket
+    :parameters (?x - AisleCells)
+    :precondition (and (at ShopBot ?x) (adjacent ?x BasketPlace) (not (holding ShopBot)))
+    :effect (and (holding ShopBot) (hold_basket ShopBot))
+  )
+
+  (:action pick_up_with_basket
+    :parameters (?item - ShoppingItem ?x - AisleCells ?y - location)
+    :precondition (and (at ShopBot ?x) (holding ShopBot) (hold_basket ShopBot) (at_item ?item ?y) (adjacent ?x ?y))
+    :effect (and (hold_in Basket ?item) (not (at_item ?item ?y)))
+  )  
+
+  (:action drop_basket_check
+    :parameters (?x - AisleCells)
+    :precondition (and (at ShopBot ?x) (holding ShopBot) (hold_basket ShopBot)(adjacent ?x CheckoutStand))
+    :effect (and (basket_ready_check Basket) (not (holding ShopBot)) (not (hold_basket ShopBot)))
+  ) 
+
+  (:action check_basket
+    :parameters (?item - ShoppingItem ?x - AisleCells)
+    :precondition (and (at ShopBot ?x) (hold_in Basket ?item) (not(holding ShopBot)) (basket_ready_check Basket) (adjacent ?x CheckoutStand))
+    :effect (and (checked_out ?item))
+  ) 
+
+
+
 
 
 
   (:action weigh
-    :parameters (?item - ShoppingItem ?x - AisleCells ?y -  WeighingScale)
-    :precondition (and (weighable ?item) (holding ShopBot) (hold ShopBot ?item) (at ShopBot ?x) (adjacent ?x ?y))
+    :parameters (?item - ShoppingItem ?x - AisleCells)
+    :precondition (and (weighable ?item) (holding ShopBot) 
+    (or (and (hold_basket ShopBot) (hold_in Basket ?item))(hold ShopBot ?item)) 
+    (at ShopBot ?x) (adjacent ?x WeighingScale))
     :effect (and (not(weighable ?item)))
   )
 
-
-
   (:action check_out
-    :parameters (?item - ShoppingItem ?x - AisleCells ?y -  CheckoutStand)
-    :precondition (and (at ShopBot ?x) (adjacent ?x ?y) (holding ShopBot) (hold ShopBot ?item) (not(weighable ?item)))
-    :effect (and (at_item ?item ?y) (checked_out ?item) (not(holding ShopBot)))
+    :parameters (?item - ShoppingItem ?x - AisleCells)
+    :precondition (and (at ShopBot ?x) (adjacent ?x CheckoutStand) (at_item ?item CheckoutStand) (not(holding ShopBot)) (not(weighable ?item)))
+    :effect (and (checked_out ?item))
   )
 )

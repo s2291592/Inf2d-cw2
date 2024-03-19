@@ -4,9 +4,8 @@
 
 
         Ice_Lolly Pizza Cabbage Potato ToothPaste Shampoo Bread Ketchup - ShoppingItem
-        AisleCells shelves WeighingScale CheckoutStand BasketPlace - location
+        AisleCells shelves WeighingScale CheckoutStand - location
         shelf1 shelf2 shelf3 shelf4 shelf5 shelf6 shelf7 shelf8 - shelves
-        basket
 
 
         a1 a2 a3 a4 a5 a6 a7 a8 a9 a10
@@ -16,8 +15,7 @@
     )
     
     (:init
-        ;basket
-        (at_basket Basket BasketPlace)
+
         
         ; weighable items
         (weighable Cabbage)
@@ -43,6 +41,7 @@
 
 
         ; adjacent relations
+        (adjacent a16 BasketPlace) (adjacent a19 BasketPlace)
         (adjacent a1 WeighingScale) (adjacent a1 a2) (adjacent a1 shelf3)
         (adjacent a2 a1) (adjacent a2 a3) (adjacent a2 shelf4)
         (adjacent a3 a2) (adjacent a3 shelf1) (adjacent a3 a5)
@@ -63,19 +62,11 @@
         (adjacent a18 a13) (adjacent a18 a17) (adjacent a18 a20)
         (adjacent a19 a17) (adjacent a19 a20)
         (adjacent a20 a18) (adjacent a20 a19)
-        (adjacent a16 basket) (adjacent a19 basket)
 
 
 
         ; important places
         (at ShopBot a20) 
-
-        
-        ; init the AisleCells clear
-        (Clear a1) (Clear a2) (Clear a3) (Clear a4) (Clear a5) 
-        (Clear a6) (Clear a7) (Clear a8) (Clear a9) (Clear a10)
-        (Clear a11) (Clear a12) (Clear a13) (Clear a14) (Clear a15) 
-        (Clear a16) (Clear a17) (Clear a18) (Clear a19) (not (Clear a20)) 
 
     )
     (:goal (and
