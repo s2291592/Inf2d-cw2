@@ -1,68 +1,71 @@
-(move a20 a18)
-(move a18 a17)
-(move a17 a16)
-(move a16 a15)
-(move a15 a12)
-(move a12 a11)
-(pick_up potato a11 shelf4)
-(drop potato a11 a12)
-(pick_up ketchup a11 shelf8)
-(move a11 a10)
-(move a10 a9)
-(move a9 a14)
-(drop ketchup a14 checkoutstand)
-(check_out ketchup a14)
-(pick_up bread a14 shelf7)
-(move a14 a9)
-(move a9 a10)
-(move a10 a11)
-(drop bread a11 shelf8)
-(pick_up potato a11 a12)
-(move a11 a10)
-(move a10 a9)
-(move a9 a4)
-(weigh potato a4)
-(move a4 a9)
-(move a9 a14)
-(drop potato a14 checkoutstand)
-(check_out potato a14)
-(pick_up ketchup a14 checkoutstand)
-(move a14 a9)
-(drop ketchup a9 a14)
-(move a9 a10)
-(move a10 a11)
-(move a11 a12)
-(pick_up toothpaste a12 shelf5)
-(move a12 a11)
-(move a11 a10)
-(move a10 a9)
-(move a9 a14)
-(drop toothpaste a14 checkoutstand)
-(check_out toothpaste a14)
-(pick_up potato a14 checkoutstand)
-(move a14 a9)
-(move a9 a10)
-(move a10 a11)
-(move a11 a12)
-(move a12 a5)
-(drop potato a5 a12)
-(move a5 a6)
-(move a6 a7)
-(pick_up pizza a7 shelf2)
-(move a7 a6)
-(move a6 a5)
-(move a5 a12)
-(move a12 a11)
-(move a11 a10)
-(move a10 a9)
-(move a9 a14)
-(drop pizza a14 checkoutstand)
-(check_out pizza a14)
-(move a14 a9)
-(move a9 a10)
-(move a10 a11)
-(move a11 a12)
-(move a12 a5)
-(move a5 a6)
-(move a6 a7)
-(move a7 a8)
+ff: found legal plan as follows
+
+step    0: MOVE A20 A18
+        1: MOVE A18 A17
+        2: MOVE A17 A16
+        3: MOVE A16 A15
+        4: MOVE A15 A12
+        5: MOVE A12 A11
+        6: PICK_UP POTATO A11 SHELF4
+        7: MOVE A11 A10
+        8: MOVE A10 A9
+        9: MOVE A9 A4
+       10: WEIGH POTATO A4
+       11: MOVE A4 A9
+       12: MOVE A9 A14
+       13: DROP POTATO A14 CHECKOUTSTAND
+       14: CHECK_OUT POTATO A14
+       15: MOVE A14 A9
+       16: MOVE A9 A10
+       17: MOVE A10 A11
+       18: PICK_UP KETCHUP A11 SHELF8
+       19: MOVE A11 A10
+       20: MOVE A10 A9
+       21: MOVE A9 A14
+       22: DROP KETCHUP A14 CHECKOUTSTAND
+       23: CHECK_OUT KETCHUP A14
+       24: MOVE A14 A9
+       25: MOVE A9 A10
+       26: MOVE A10 A11
+       27: MOVE A11 A12
+       28: PICK_UP TOOTHPASTE A12 SHELF5
+       29: MOVE A12 A11
+       30: MOVE A11 A10
+       31: MOVE A10 A9
+       32: MOVE A9 A14
+       33: DROP TOOTHPASTE A14 CHECKOUTSTAND
+       34: CHECK_OUT TOOTHPASTE A14
+       35: MOVE A14 A9
+       36: MOVE A9 A10
+       37: MOVE A10 A11
+       38: MOVE A11 A12
+       39: MOVE A12 A5
+       40: MOVE A5 A6
+       41: MOVE A6 A7
+       42: PICK_UP PIZZA A7 SHELF2
+       43: MOVE A7 A6
+       44: MOVE A6 A5
+       45: MOVE A5 A12
+       46: MOVE A12 A11
+       47: MOVE A11 A10
+       48: MOVE A10 A9
+       49: MOVE A9 A14
+       50: DROP PIZZA A14 CHECKOUTSTAND
+       51: CHECK_OUT PIZZA A14
+       52: MOVE A14 A9
+       53: MOVE A9 A10
+       54: MOVE A10 A11
+       55: MOVE A11 A12
+       56: MOVE A12 A5
+       57: MOVE A5 A6
+       58: MOVE A6 A7
+       59: MOVE A7 A8
+     
+
+time spent:    0.00 seconds instantiating 1090 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 288 facts and 1078 actions
+               0.00 seconds creating final representation with 282 relevant facts, 0 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.14 seconds searching, evaluating 6907 states, to a max depth of 9
+               0.14 seconds total time
