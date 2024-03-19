@@ -67,21 +67,13 @@
         ; important places
         (at ShopBot a20) 
 
-        
-        ; init the AisleCells clear
-        (Clear a1) (Clear a2) (Clear a3) (Clear a4) (Clear a5) 
-        (Clear a6) (Clear a7) (Clear a8) (Clear a9) (Clear a10)
-        (Clear a11) (Clear a12) (Clear a13) (Clear a14) (Clear a15) 
-        (Clear a16) (Clear a17) (Clear a18) (Clear a19) (not (Clear a20)) 
-
     )
     (:goal (and
         (checked_out Potato)
         (checked_out Ketchup)
         (checked_out ToothPaste)
         (checked_out Pizza)
-        (at_bot ShopBot p27)
-        (at_item Ice_Lolly a1) (at_item Pizza a2) (at_item Bread a3) 
-        (at_item ToothPaste a8) (at_item Ketchup a13)
+        (at_item )
+        (at ShopBot a8)
     ))
 )

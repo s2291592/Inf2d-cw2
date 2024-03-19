@@ -54,7 +54,7 @@
   (:action drop
     :parameters (?item - ShoppingItem ?x - AisleCells ?y - location)
     :precondition (and (at ShopBot ?x) (adjacent ?x ?y) (holding ShopBot) (hold ShopBot ?item))
-    :effect (and (at_item ?item ?y) (at ShopBot ?x) (not (holding ShopBot)))
+    :effect (and (at_item ?item ?y) (at ShopBot ?x) (not (holding ShopBot)) (not (hold ShopBot ?item)))
   )
 
 
@@ -67,7 +67,7 @@
 
   (:action check_out
     :parameters (?item - ShoppingItem ?x - AisleCells)
-    :precondition (and (at ShopBot ?x) (adjacent ?x CheckoutStand) (at_item ?item CheckoutStand) (not(holding ShopBot)))
+    :precondition (and (at ShopBot ?x) (adjacent ?x CheckoutStand) (at_item ?item CheckoutStand) (not(holding ShopBot)) (not(weighable ?item)))
     :effect (and (checked_out ?item))
   )
 )
