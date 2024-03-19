@@ -67,13 +67,6 @@
         ; important places
         (at ShopBot a20) 
 
-        
-        ; init the AisleCells clear
-        (Clear a1) (Clear a2) (Clear a3) (Clear a4) (Clear a5) 
-        (Clear a6) (Clear a7) (Clear a8) (Clear a9) (Clear a10)
-        (Clear a11) (Clear a12) (Clear a13) (Clear a14) (Clear a15) 
-        (Clear a16) (Clear a17) (Clear a18) (Clear a19) (not (Clear a20)) 
-
     )
     (:goal (and
         (checked_out Potato)
