@@ -1,4 +1,4 @@
-ff: found legal plan as follows
+./ff -o domain-1.pddl -f problem-1.pddl
 
 step    0: MOVE A20 A18
         1: MOVE A18 A17

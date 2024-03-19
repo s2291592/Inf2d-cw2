@@ -1,3 +1,5 @@
+timeout 30 ./ff -E -g 1 -h 1 -o domain-2.pddl -f problem-2.pddl
+
 step    0: MOVE A20 A19
         1: USE_BASKET A19
         2: MOVE A19 A17
