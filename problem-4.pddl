@@ -11,10 +11,19 @@
         a1 a2 a3 a4 a5 a6 a7 a8 a9 a10
         a11 a12 a13 a14 a15 a16 a17 a18 a19 a20 - AisleCells
 
+        botBlue botOran -shopbot
+
 
     )
     
     (:init
+
+
+        ; Define clear to ensure that two bots will not collide in the same place
+        (clear a1) (clear a2) (clear a3) (clear a4) (clear a5) 
+        (clear a6) (clear a7) (clear a8) (clear a9) (clear a10) 
+        (clear a11) (clear a12) (clear a13) (clear a14) (clear a15) 
+        (clear a16) (clear a17) (clear a18) (not (clear a19)) (not (clear a20))
 
         
         ; weighable items
@@ -44,7 +53,7 @@
         (= (price ToothPaste) 7) (= (price Shampoo) 9) (= (price Bread) 5) (= (price Ketchup) 8)
 
         ; bot initial credit
-        (= (balance ShopBot) 15)
+        (= (balance botBlue) 15) (= (balance botOran) 11)
 
 
         ; adjacent relations
@@ -74,14 +83,19 @@
 
 
         ; important places
-        (at ShopBot a20) 
+        (at botBlue a20) (at botOran a19)
 
     )
     (:goal (and
-        (checked_out Potato)
-        (checked_out Ketchup)
-        (checked_out ToothPaste)
-        (checked_out Pizza)
-        (at ShopBot a8)
+        (checked_out Potato botBlue)
+        (checked_out Ketchup botBlue)
+        (checked_out ToothPaste botBlue)
+        (checked_out Pizza botBlue)
+
+        
+        (checked_out Cabbage botOran)
+        (checked_out Bread botOran)
+        (checked_out Shampoo botOran)
+        (checked_out Ice_Lolly botOran)
     ))
 )
