@@ -23,7 +23,7 @@
       (holding ?bot - shopbot) ;; ShopBot is holding an item
       (hold_basket ?bot - shopbot)
       (hold ?bot - shopbot ?item - ShoppingItem) ;; hold the item
-      (hold_in ?b - basket ?item - ShoppingItem)
+      (hold_in ?bot - shopbot ?item - ShoppingItem)
       (weighable ?item - ShoppingItem) ;; Item can be weighed
       (basket_ready_check ?b - basket)
       (checked_out ?item - ShoppingItem) ;; Item has been checked out 
@@ -71,7 +71,7 @@
   (:action pick_up_with_basket
     :parameters (?item - ShoppingItem ?x - AisleCells ?y - location)
     :precondition (and (at ShopBot ?x) (holding ShopBot) (hold_basket ShopBot) (at_item ?item ?y) (adjacent ?x ?y))
-    :effect (and (hold_in Basket ?item) (not (at_item ?item ?y)))
+    :effect (and (hold_in ShopBot ?item) (not (at_item ?item ?y)))
   )  
 
   (:action drop_basket_check
@@ -84,7 +84,7 @@
 
   (:action check_by_basket
     :parameters (?item - ShoppingItem ?x - AisleCells)
-    :precondition (and (at ShopBot ?x) (hold_in Basket ?item) (not(weighable ?item)) (not(holding ShopBot)) (basket_ready_check Basket) (adjacent ?x CheckoutStand))
+    :precondition (and (at ShopBot ?x) (hold_in ShopBot ?item) (not(weighable ?item)) (not(holding ShopBot)) (basket_ready_check Basket) (adjacent ?x CheckoutStand))
     :effect (and (checked_out ?item))
   ) 
 
@@ -92,7 +92,7 @@
 
   (:action weigh
     :parameters (?item - ShoppingItem ?x - AisleCells)
-    :precondition (and (weighable ?item) (holding ShopBot)  (at ShopBot ?x) (adjacent ?x WeighingScale) (or (hold_in Basket ?item) (hold ShopBot ?item)))
+    :precondition (and (weighable ?item) (holding ShopBot)  (at ShopBot ?x) (adjacent ?x WeighingScale) (or (hold_in ShopBot ?item) (hold ShopBot ?item)))
     :effect (and (not(weighable ?item)))
   )
 
