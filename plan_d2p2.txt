@@ -5,49 +5,47 @@ step    0: MOVE A20 A19
         2: MOVE A19 A17
         3: MOVE A17 A16
         4: MOVE A16 A15
-        5: MOVE A15 A12
-        6: PICK_UP_WITH_BASKET TOOTHPASTE A12 SHELF5
-        7: MOVE A12 A11
-        8: PICK_UP_WITH_BASKET KETCHUP A11 SHELF8
-        9: PICK_UP_WITH_BASKET POTATO A11 SHELF4
-       10: MOVE A11 A10
-       11: MOVE A10 A9
-       12: MOVE A9 A4
-       13: WEIGH POTATO A4
-       14: MOVE A4 A9
-       15: MOVE A9 A10
-       16: MOVE A10 A11
-       17: MOVE A11 A12
-       18: MOVE A12 A5
-       19: MOVE A5 A6
-       20: MOVE A6 A7
-       21: PICK_UP_WITH_BASKET PIZZA A7 SHELF2
-       22: MOVE A7 A6
-       23: MOVE A6 A5
-       24: MOVE A5 A12
-       25: MOVE A12 A11
-       26: MOVE A11 A10
-       27: MOVE A10 A9
-       28: MOVE A9 A14
-       29: DROP_BASKET_CHECK A14
-       30: CHECK_BY_BASKET PIZZA A14
-       31: CHECK_BY_BASKET TOOTHPASTE A14
-       32: CHECK_BY_BASKET KETCHUP A14
-       33: CHECK_BY_BASKET POTATO A14
-       34: MOVE A14 A9
-       35: MOVE A9 A10
-       36: MOVE A10 A11
-       37: MOVE A11 A12
-       38: MOVE A12 A5
-       39: MOVE A5 A6
-       40: MOVE A6 A7
-       41: MOVE A7 A8
+        5: PICK_UP_WITH_BASKET KETCHUP A15 SHELF8
+        6: MOVE A15 A12
+        7: PICK_UP_WITH_BASKET TOOTHPASTE A12 SHELF5
+        8: MOVE A12 A5
+        9: MOVE A5 A6
+       10: MOVE A6 A7
+       11: PICK_UP_WITH_BASKET PIZZA A7 SHELF2
+       12: MOVE A7 A6
+       13: MOVE A6 A5
+       14: MOVE A5 A12
+       15: MOVE A12 A11
+       16: PICK_UP_WITH_BASKET POTATO A11 SHELF4
+       17: MOVE A11 A10
+       18: MOVE A10 A9
+       19: MOVE A9 A4
+       20: WEIGH POTATO A4
+       21: MOVE A4 A9
+       22: MOVE A9 A14
+       23: DROP PIZZA A14
+       24: DROP POTATO A14
+       25: DROP TOOTHPASTE A14
+       26: DROP KETCHUP A14
+       27: RETURN_BASKET A14
+       28: CHECK_OUT PIZZA A14
+       29: CHECK_OUT POTATO A14
+       30: CHECK_OUT TOOTHPASTE A14
+       31: CHECK_OUT KETCHUP A14
+       32: MOVE A14 A9
+       33: MOVE A9 A10
+       34: MOVE A10 A11
+       35: MOVE A11 A12
+       36: MOVE A12 A5
+       37: MOVE A5 A6
+       38: MOVE A6 A7
+       39: MOVE A7 A8
      
 
-time spent:    0.00 seconds instantiating 1645 easy, 8 hard action templates
-               0.00 seconds reachability analysis, yielding 306 facts and 1653 actions
-               0.00 seconds creating final representation with 300 relevant facts, 0 relevant fluents
+time spent:    0.00 seconds instantiating 1109 easy, 24 hard action templates
+               0.00 seconds reachability analysis, yielding 74 facts and 131 actions
+               0.00 seconds creating final representation with 60 relevant facts, 0 relevant fluents
                0.00 seconds computing LNF
                0.00 seconds building connectivity graph
-               0.01 seconds searching, evaluating 446 states, to a max depth of 0
-               0.01 seconds total time
+               3.82 seconds searching, evaluating 62429 states, to a max depth of 0
+               3.82 seconds total time

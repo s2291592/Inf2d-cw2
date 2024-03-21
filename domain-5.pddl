@@ -56,14 +56,8 @@
 
   (:action pick_up
     :parameters (?item - ShoppingItem ?x - AisleCells ?y - location ?bot - shopbot)
-    :precondition (and (at ?bot ?x) (>= (balance ?bot) (price ?item)) (at_item ?item ?y) (adjacent ?x ?y) 
-    (or (hold_basket ?bot) (not (holding ?bot)))
-    )
-    :effect (and 
-    (when (not (holding ?bot)) (and (holding ?bot) (hold ?bot ?item))) 
-    (when (hold_basket ?bot) (hold_in ?bot ?item))
-    (decrease (balance ?bot) (price ?item))
-    )
+    :precondition (and (at ?bot ?x) (>= (balance ?bot) (price ?item)) (at_item ?item ?y) (adjacent ?x ?y) (not (holding ?bot)))
+    :effect (and (holding ?bot) (hold ?bot ?item) (decrease (balance ?bot) (price ?item)))
   )
 
 
@@ -83,6 +77,13 @@
     :precondition (and (at ?bot ?x) (adjacent ?x BasketPlace) (not (holding ?bot)))
     :effect (and (holding ?bot) (hold_basket ?bot))
   )
+
+  (:action pick_up_with_basket
+    :parameters (?item - ShoppingItem ?x - AisleCells ?y - location ?bot - shopbot)
+    :precondition (and (at ?bot ?x) (holding ?bot) (>= (balance ?bot) (price ?item)) (hold_basket ?bot) (at_item ?item ?y) (adjacent ?x ?y))
+    :effect (and (hold_in ?bot ?item) (decrease (balance ?bot) (price ?item)))
+  )  
+
 
 
   (:action return_basket

@@ -1,40 +1,41 @@
-timeout 30 ./ff -E -g 1 -h 5 -o domain-3.pddl -f problem-3.pddl
+timeout 30 ./ff -E -g 1 -h 1 -o domain-3.pddl -f problem-3.pddl
+
 step    0: MOVE A20 A19
         1: USE_BASKET A19
         2: MOVE A19 A17
         3: MOVE A17 A16
         4: MOVE A16 A15
-        5: MOVE A15 A12
-        6: PICK_UP_WITH_BASKET TOOTHPASTE A12 SHELF5
-        7: MOVE A12 A11
-        8: PICK_UP_WITH_BASKET KETCHUP A11 SHELF8
-        9: PICK_UP_WITH_BASKET POTATO A11 SHELF4
-       10: MOVE A11 A10
-       11: MOVE A10 A9
-       12: MOVE A9 A4
-       13: WEIGH POTATO A4
-       14: MOVE A4 A9
-       15: MOVE A9 A10
-       16: MOVE A10 A11
-       17: MOVE A11 A12
-       18: MOVE A12 A5
-       19: MOVE A5 A6
-       20: MOVE A6 A7
-       21: PICK_UP_WITH_BASKET PIZZA A7 SHELF2
-       22: MOVE A7 A8
-       23: TOP_UP A8
-       24: MOVE A8 A7
-       25: MOVE A7 A6
-       26: MOVE A6 A5
-       27: MOVE A5 A12
-       28: MOVE A12 A11
-       29: MOVE A11 A10
-       30: MOVE A10 A9
-       31: MOVE A9 A14
-       32: DROP_BASKET_CHECK A14
-       33: CHECK_BY_BASKET TOOTHPASTE A14
-       34: CHECK_BY_BASKET POTATO A14
-       35: CHECK_BY_BASKET KETCHUP A14
+        5: PICK_UP_WITH_BASKET KETCHUP A15 SHELF8
+        6: MOVE A15 A12
+        7: MOVE A12 A5
+        8: MOVE A5 A6
+        9: PICK_UP_WITH_BASKET TOOTHPASTE A6 SHELF5
+       10: MOVE A6 A7
+       11: MOVE A7 A8
+       12: TOP_UP A8
+       13: TOP_UP A8
+       14: MOVE A8 A7
+       15: PICK_UP_WITH_BASKET PIZZA A7 SHELF2
+       16: MOVE A7 A6
+       17: MOVE A6 A5
+       18: MOVE A5 A12
+       19: MOVE A12 A11
+       20: PICK_UP_WITH_BASKET POTATO A11 SHELF4
+       21: MOVE A11 A10
+       22: MOVE A10 A9
+       23: MOVE A9 A4
+       24: WEIGH POTATO A4
+       25: MOVE A4 A9
+       26: MOVE A9 A14
+       27: DROP PIZZA A14
+       28: DROP POTATO A14
+       29: DROP TOOTHPASTE A14
+       30: DROP KETCHUP A14
+       31: RETURN_BASKET A14
+       32: CHECK_OUT PIZZA A14
+       33: CHECK_OUT POTATO A14
+       34: CHECK_OUT TOOTHPASTE A14
+       35: CHECK_OUT KETCHUP A14
        36: MOVE A14 A9
        37: MOVE A9 A10
        38: MOVE A10 A11
@@ -43,31 +44,12 @@ step    0: MOVE A20 A19
        41: MOVE A5 A6
        42: MOVE A6 A7
        43: MOVE A7 A8
-       44: TOP_UP A8
-       45: MOVE A8 A7
-       46: MOVE A7 A6
-       47: MOVE A6 A5
-       48: MOVE A5 A12
-       49: MOVE A12 A11
-       50: MOVE A11 A10
-       51: MOVE A10 A9
-       52: MOVE A9 A14
-       53: CHECK_BY_BASKET PIZZA A14
-       54: MOVE A14 A9
-       55: MOVE A9 A10
-       56: MOVE A10 A11
-       57: MOVE A11 A12
-       58: MOVE A12 A5
-       59: MOVE A5 A6
-       60: MOVE A6 A7
-       61: MOVE A7 A8
      
 
-time spent:    0.00 seconds instantiating 1670 easy, 8 hard action templates
-               0.00 seconds reachability analysis, yielding 314 facts and 1678 actions
-               0.00 seconds creating final representation with 308 relevant facts, 1 relevant fluents
+time spent:    0.00 seconds instantiating 1126 easy, 24 hard action templates
+               0.00 seconds reachability analysis, yielding 74 facts and 132 actions
+               0.00 seconds creating final representation with 60 relevant facts, 1 relevant fluents
                0.00 seconds computing LNF
                0.00 seconds building connectivity graph
-               5.95 seconds searching, evaluating 70253 states, to a max depth of 0
-               5.95 seconds total time
-
+               0.75 seconds searching, evaluating 28208 states, to a max depth of 0
+               0.75 seconds total time
