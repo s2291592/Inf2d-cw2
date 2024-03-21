@@ -48,6 +48,36 @@
       :effect (and (at ?bot ?to) (not (at ?bot ?from)) (clear ?from) (not (clear ?to)))
   )
 
+  (:action trans_item
+      :parameters (?x - AisleCells ?y - AisleCells ?item - ShoppingItem ?bot1 - shopbot ?bot2 - shopbot)
+      :precondition (and (at ?bot1 ?x) (at ?bot2 ?y) (adjacent ?x ?y) (not (hold ?bot2 ?item)) (not (hold_in ?bot2 ?item))
+      (or (hold ?bot1 ?item) (hold_in ?bot1 ?item))
+      )
+      :effect (and 
+      (when 
+      (and (hold ?bot1 ?item) (not (hold_basket ?bot2))) 
+      (and (not (hold ?bot1 ?item)) (hold ?bot2 ?item) (holding ?bot2))
+      )
+      
+      (when 
+      (and (hold ?bot1 ?item) (hold_basket ?bot2)) 
+      (and (not (hold ?bot1 ?item)) (hold_in ?bot2 ?item))
+      )
+
+      (when 
+      (and (hold_in ?bot1 ?item) (not (hold_basket ?bot2))) 
+      (and (not (hold_in ?bot1 ?item)) (hold ?bot2 ?item) (holding ?bot2))
+      )      
+
+      (when 
+      (and (hold_in ?bot1 ?item) (hold_basket ?bot2)) 
+      (and (not (hold_in ?bot1 ?item)) (hold_in ?bot2 ?item))
+      )
+      (decrease (balance ?bot2) (price ?item))
+      (increase (balance ?bot1) (price ?item))
+      )
+  )
+
   (:action top_up
       :parameters (?x - AisleCells ?bot - shopbot)
       :precondition (and (at ?bot ?x) (adjacent ?x AddCredit))

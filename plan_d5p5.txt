@@ -1,0 +1,184 @@
+./ff -o domain-5.pddl -f problem-5.pddl
+
+ff: parsing domain file
+domain 'SUPERMARKET' defined
+ ... done.
+ff: parsing problem file
+problem 'SUPERMARKET-PROBLEM' defined
+ ... done.
+
+
+no metric specified. plan length assumed.
+
+task contains conditional effects. turning off state domination.
+
+
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is EHC, if that fails then  best-first on 1*g(s) + 5*h(s) where
+    metric is  plan length
+
+Cueing down from goal distance:   56 into depth [1]
+                                  52            [1]
+                                  51            [1]
+                                  49            [1]
+                                  47            [1]
+                                  46            [1][2]
+                                  45            [1][2]
+                                  42            [1][2]
+                                  41            [1][2][3][4]
+                                  40            [1][2][3][4][5]
+                                  39            [1]
+                                  38            [1]
+                                  37            [1][2]
+                                  36            [1]
+                                  35            [1]
+                                  34            [1]
+                                  33            [1]
+                                  32            [1][2]
+                                  31            [1]
+                                  30            [1]
+                                  29            [1][2][3][4][5]
+                                  28            [1][2][3]
+                                  27            [1][2][3][4][5]
+                                  26            [1][2][3][4][5][6]
+                                  25            [1][2]
+                                  24            [1][2][3][4]
+                                  23            [1][2][3]
+                                  22            [1]
+                                  21            [1][2][3][4][5][6][7][8]
+                                  20            [1][2][3][4]
+                                  19            [1]
+                                  18            [1][2][3][4][5][6][7][8][9][10][11][12]
+                                  17            [1]
+                                  16            [1]
+                                  14            [1]
+                                  11            [1][2][3][4]
+                                  10            [1]
+                                   9            [1][2]
+                                   8            [1]
+                                   7            [1]
+                                   6            [1]
+                                   5            [1]
+                                   4            [1]
+                                   3            [1]
+                                   2            [1]
+                                   1            [1]
+                                   0            
+
+ff: found legal plan as follows
+
+step    0: MOVE A19 A17 BOTORAN
+        1: MOVE A20 A19 BOTBLUE
+        2: MOVE A17 A16 BOTORAN
+        3: USE_BASKET A16 BOTORAN
+        4: MOVE A19 A17 BOTBLUE
+        5: MOVE A16 A15 BOTORAN
+        6: MOVE A15 A12 BOTORAN
+        7: MOVE A17 A16 BOTBLUE
+        8: MOVE A16 A15 BOTBLUE
+        9: MOVE A12 A5 BOTORAN
+       10: PICK_UP KETCHUP A15 SHELF8 BOTBLUE
+       11: MOVE A5 A12 BOTORAN
+       12: PICK_UP_WITH_BASKET TOOTHPASTE A12 SHELF5 BOTORAN
+       13: TRANS_ITEM A12 A15 TOOTHPASTE BOTORAN BOTBLUE
+       14: MOVE A12 A5 BOTORAN
+       15: MOVE A15 A12 BOTBLUE
+       16: MOVE A12 A11 BOTBLUE
+       17: MOVE A11 A10 BOTBLUE
+       18: MOVE A5 A12 BOTORAN
+       19: MOVE A12 A11 BOTORAN
+       20: PICK_UP_WITH_BASKET POTATO A11 SHELF4 BOTORAN
+       21: TRANS_ITEM A11 A10 POTATO BOTORAN BOTBLUE
+       22: MOVE A10 A9 BOTBLUE
+       23: MOVE A11 A10 BOTORAN
+       24: PICK_UP_WITH_BASKET CABBAGE A10 SHELF3 BOTORAN
+       25: PICK_UP_WITH_BASKET BREAD A10 SHELF7 BOTORAN
+       26: TRANS_ITEM A10 A9 CABBAGE BOTORAN BOTBLUE
+       27: TRANS_ITEM A10 A9 BREAD BOTORAN BOTBLUE
+       28: MOVE A9 A4 BOTBLUE
+       29: WEIGH POTATO A4 BOTBLUE
+       30: WEIGH CABBAGE A4 BOTBLUE
+       31: MOVE A4 A9 BOTBLUE
+       32: MOVE A10 A11 BOTORAN
+       33: MOVE A9 A14 BOTBLUE
+       34: DROP POTATO A14 BOTBLUE
+       35: PICK_UP_WITH_BASKET POTATO A11 SHELF4 BOTORAN
+       36: CHECK_OUT POTATO A14 BOTBLUE
+       37: MOVE A11 A10 BOTORAN
+       38: MOVE A14 A9 BOTBLUE
+       39: TRANS_ITEM A10 A9 POTATO BOTORAN BOTBLUE
+       40: MOVE A10 A11 BOTORAN
+       41: MOVE A9 A14 BOTBLUE
+       42: DROP KETCHUP A14 BOTBLUE
+       43: PICK_UP_WITH_BASKET KETCHUP A11 SHELF8 BOTORAN
+       44: CHECK_OUT KETCHUP A14 BOTBLUE
+       45: MOVE A11 A10 BOTORAN
+       46: MOVE A10 A9 BOTORAN
+       47: TRANS_ITEM A9 A14 KETCHUP BOTORAN BOTBLUE
+       48: MOVE A9 A10 BOTORAN
+       49: DROP TOOTHPASTE A14 BOTBLUE
+       50: CHECK_OUT TOOTHPASTE A14 BOTBLUE
+       51: MOVE A14 A9 BOTBLUE
+       52: TRANS_ITEM A9 A10 KETCHUP BOTBLUE BOTORAN
+       53: TRANS_ITEM A10 A9 KETCHUP BOTORAN BOTBLUE
+       54: MOVE A9 A14 BOTBLUE
+       55: DROP CABBAGE A14 BOTBLUE
+       56: PICK_UP_WITH_BASKET CABBAGE A10 SHELF3 BOTORAN
+       57: MOVE A10 A9 BOTORAN
+       58: TRANS_ITEM A9 A14 CABBAGE BOTORAN BOTBLUE
+       59: DROP BREAD A14 BOTBLUE
+       60: MOVE A9 A10 BOTORAN
+       61: MOVE A10 A11 BOTORAN
+       62: MOVE A11 A12 BOTORAN
+       63: MOVE A12 A5 BOTORAN
+       64: MOVE A5 A6 BOTORAN
+       65: PICK_UP_WITH_BASKET ICE_LOLLY A6 SHELF1 BOTORAN
+       66: MOVE A6 A5 BOTORAN
+       67: MOVE A5 A12 BOTORAN
+       68: MOVE A12 A11 BOTORAN
+       69: MOVE A11 A10 BOTORAN
+       70: MOVE A10 A9 BOTORAN
+       71: TRANS_ITEM A9 A14 ICE_LOLLY BOTORAN BOTBLUE
+       72: DROP ICE_LOLLY A14 BOTBLUE
+       73: MOVE A9 A10 BOTORAN
+       74: MOVE A10 A11 BOTORAN
+       75: MOVE A11 A12 BOTORAN
+       76: MOVE A12 A5 BOTORAN
+       77: MOVE A5 A6 BOTORAN
+       78: MOVE A6 A7 BOTORAN
+       79: PICK_UP_WITH_BASKET PIZZA A7 SHELF2 BOTORAN
+       80: MOVE A7 A8 BOTORAN
+       81: TOP_UP A8 BOTORAN
+       82: MOVE A8 A7 BOTORAN
+       83: PICK_UP_WITH_BASKET SHAMPOO A7 SHELF6 BOTORAN
+       84: MOVE A7 A6 BOTORAN
+       85: MOVE A6 A5 BOTORAN
+       86: MOVE A5 A12 BOTORAN
+       87: MOVE A12 A11 BOTORAN
+       88: MOVE A11 A10 BOTORAN
+       89: MOVE A10 A9 BOTORAN
+       90: TRANS_ITEM A9 A14 PIZZA BOTORAN BOTBLUE
+       91: MOVE A9 A4 BOTORAN
+       92: DROP PIZZA A14 BOTBLUE
+       93: CHECK_OUT PIZZA A14 BOTBLUE
+       94: MOVE A14 A9 BOTBLUE
+       95: MOVE A9 A10 BOTBLUE
+       96: MOVE A4 A9 BOTORAN
+       97: MOVE A9 A14 BOTORAN
+       98: DROP SHAMPOO A14 BOTORAN
+       99: RETURN_BASKET A14 BOTORAN
+      100: CHECK_OUT CABBAGE A14 BOTORAN
+      101: CHECK_OUT BREAD A14 BOTORAN
+      102: CHECK_OUT SHAMPOO A14 BOTORAN
+      103: CHECK_OUT ICE_LOLLY A14 BOTORAN
+     
+
+time spent:    0.01 seconds instantiating 2252 easy, 2736 hard action templates
+               0.00 seconds reachability analysis, yielding 194 facts and 2952 actions
+               0.00 seconds creating final representation with 180 relevant facts, 2 relevant fluents
+               0.01 seconds computing LNF
+               0.01 seconds building connectivity graph
+               7.42 seconds searching, evaluating 13706 states, to a max depth of 12
+               7.45 seconds total time
