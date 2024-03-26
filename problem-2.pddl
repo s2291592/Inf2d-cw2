@@ -74,7 +74,6 @@
         (checked_out Ketchup)
         (checked_out ToothPaste)
         (checked_out Pizza)
-        (at ShopBot a8)
         (not (hold_basket ShopBot))
     ))
 )

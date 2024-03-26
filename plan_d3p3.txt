@@ -1,5 +1,55 @@
 timeout 30 ./ff -E -g 1 -h 1 -o domain-3.pddl -f problem-3.pddl
 
+ff: parsing domain file
+domain 'SUPERMARKET' defined
+ ... done.
+ff: parsing problem file
+problem 'SUPERMARKET-PROBLEM' defined
+ ... done.
+
+
+no metric specified. plan length assumed.
+
+task contains conditional effects. turning off state domination.
+
+
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is  best-first on 1*g(s) + 1*h(s) where
+    metric is  plan length
+
+advancing to distance:   31
+                         29
+                         28
+                         27
+                         24
+                         23
+                         22
+                         21
+                         20
+                         18
+                         17
+                         16
+                         15
+                         14
+                         13
+                         12
+                         11
+                         10
+                          9
+                          8
+                          7
+                          6
+                          5
+                          4
+                          3
+                          2
+                          1
+                          0
+
+ff: found legal plan as follows
+
 step    0: MOVE A20 A19
         1: USE_BASKET A19
         2: MOVE A19 A17
@@ -9,14 +59,14 @@ step    0: MOVE A20 A19
         6: MOVE A15 A12
         7: MOVE A12 A5
         8: MOVE A5 A6
-        9: PICK_UP_WITH_BASKET TOOTHPASTE A6 SHELF5
-       10: MOVE A6 A7
+        9: MOVE A6 A7
+       10: PICK_UP_WITH_BASKET PIZZA A7 SHELF2
        11: MOVE A7 A8
        12: TOP_UP A8
        13: TOP_UP A8
        14: MOVE A8 A7
-       15: PICK_UP_WITH_BASKET PIZZA A7 SHELF2
-       16: MOVE A7 A6
+       15: MOVE A7 A6
+       16: PICK_UP_WITH_BASKET TOOTHPASTE A6 SHELF5
        17: MOVE A6 A5
        18: MOVE A5 A12
        19: MOVE A12 A11
@@ -36,14 +86,6 @@ step    0: MOVE A20 A19
        33: CHECK_OUT POTATO A14
        34: CHECK_OUT TOOTHPASTE A14
        35: CHECK_OUT KETCHUP A14
-       36: MOVE A14 A9
-       37: MOVE A9 A10
-       38: MOVE A10 A11
-       39: MOVE A11 A12
-       40: MOVE A12 A5
-       41: MOVE A5 A6
-       42: MOVE A6 A7
-       43: MOVE A7 A8
      
 
 time spent:    0.00 seconds instantiating 1126 easy, 24 hard action templates
@@ -51,5 +93,5 @@ time spent:    0.00 seconds instantiating 1126 easy, 24 hard action templates
                0.00 seconds creating final representation with 60 relevant facts, 1 relevant fluents
                0.00 seconds computing LNF
                0.00 seconds building connectivity graph
-               0.75 seconds searching, evaluating 28208 states, to a max depth of 0
-               0.75 seconds total time
+               0.01 seconds searching, evaluating 1663 states, to a max depth of 0
+               0.01 seconds total time

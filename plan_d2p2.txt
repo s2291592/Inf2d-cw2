@@ -1,5 +1,56 @@
 timeout 30 ./ff -E -g 1 -h 1 -o domain-2.pddl -f problem-2.pddl
 
+ff: parsing domain file
+domain 'SUPERMARKET' defined
+ ... done.
+ff: parsing problem file
+problem 'SUPERMARKET-PROBLEM' defined
+ ... done.
+
+
+no metric specified. plan length assumed.
+
+task contains conditional effects. turning off state domination.
+
+
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is  best-first on 1*g(s) + 1*h(s) where
+    metric is  plan length
+
+advancing to distance:   31
+                         29
+                         28
+                         27
+                         24
+                         23
+                         22
+                         21
+                         20
+                         19
+                         18
+                         17
+                         16
+                         15
+                         14
+                         13
+                         12
+                         11
+                         10
+                          9
+                          8
+                          7
+                          6
+                          5
+                          4
+                          3
+                          2
+                          1
+                          0
+
+ff: found legal plan as follows
+
 step    0: MOVE A20 A19
         1: USE_BASKET A19
         2: MOVE A19 A17
@@ -32,14 +83,6 @@ step    0: MOVE A20 A19
        29: CHECK_OUT POTATO A14
        30: CHECK_OUT TOOTHPASTE A14
        31: CHECK_OUT KETCHUP A14
-       32: MOVE A14 A9
-       33: MOVE A9 A10
-       34: MOVE A10 A11
-       35: MOVE A11 A12
-       36: MOVE A12 A5
-       37: MOVE A5 A6
-       38: MOVE A6 A7
-       39: MOVE A7 A8
      
 
 time spent:    0.00 seconds instantiating 1109 easy, 24 hard action templates
@@ -47,5 +90,6 @@ time spent:    0.00 seconds instantiating 1109 easy, 24 hard action templates
                0.00 seconds creating final representation with 60 relevant facts, 0 relevant fluents
                0.00 seconds computing LNF
                0.00 seconds building connectivity graph
-               3.82 seconds searching, evaluating 62429 states, to a max depth of 0
-               3.82 seconds total time
+               0.01 seconds searching, evaluating 1046 states, to a max depth of 0
+               0.01 seconds total time
+
