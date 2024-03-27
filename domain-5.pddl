@@ -26,6 +26,7 @@
       (weighable ?item - ShoppingItem) ;; Item can be weighed
       (checked_out ?item - ShoppingItem ?bot - shopbot) ;; Item has been checked out 
       (clear ?ac - AisleCells)
+      (on_list ?bot - shopbot ?item - ShoppingItem)
   )
 
   (:functions
@@ -67,7 +68,7 @@
 
   (:action pick_up
     :parameters (?item - ShoppingItem ?x - AisleCells ?y - location ?bot - shopbot)
-    :precondition (and (at ?bot ?x) (>= (balance ?bot) (price ?item)) (at_item ?item ?y) (adjacent ?x ?y) (>= (battery ?bot) 1) (not (holding ?bot)))
+    :precondition (and (at ?bot ?x) (at_item ?item ?y) (>= (balance ?bot) (price ?item)) (on_list ?bot ?item) (adjacent ?x ?y) (>= (battery ?bot) 1) (not (holding ?bot)))
     :effect (and (holding ?bot) (hold ?bot ?item) (decrease (battery ?bot) 1) (decrease (balance ?bot) (price ?item)))
   )
 
@@ -91,7 +92,7 @@
 
   (:action pick_up_with_basket
     :parameters (?item - ShoppingItem ?x - AisleCells ?y - location ?bot - shopbot)
-    :precondition (and (at ?bot ?x) (holding ?bot) (>= (balance ?bot) (price ?item)) (>= (battery ?bot) 1) (hold_basket ?bot) (at_item ?item ?y) (adjacent ?x ?y))
+    :precondition (and (at ?bot ?x) (>= (balance ?bot) (price ?item)) (on_list ?bot ?item) (>= (battery ?bot) 1) (hold_basket ?bot) (at_item ?item ?y) (adjacent ?x ?y))
     :effect (and (hold_in ?bot ?item) (decrease (battery ?bot) 1) (decrease (balance ?bot) (price ?item)))
   )  
 

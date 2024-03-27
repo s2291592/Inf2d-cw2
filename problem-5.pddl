@@ -19,7 +19,20 @@
     (:init
 
         ; define the battery capacity
-        (= (battery botBlue) 20) (= (battery botOran) 20)
+        (= (battery botBlue) 25) (= (battery botOran) 25)
+
+        ;what can bot pick up
+        (on_list botBlue Potato)
+        (on_list botBlue Ketchup)
+        (on_list botBlue ToothPaste)
+        (on_list botBlue Pizza)
+        
+
+        
+        (on_list botOran Cabbage)
+        (on_list botOran Bread)
+        (on_list botOran Shampoo)
+        (on_list botOran Ice_Lolly)
 
 
         ; Define clear to ensure that two bots will not collide in the same place

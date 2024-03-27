@@ -30,6 +30,20 @@
         (weighable Cabbage)
         (weighable Potato)
 
+        ;what can bot pick up
+        (on_list botBlue Potato)
+        (on_list botBlue Ketchup)
+        (on_list botBlue ToothPaste)
+        (on_list botBlue Pizza)
+        
+
+        
+        (on_list botOran Cabbage)
+        (on_list botOran Bread)
+        (on_list botOran Shampoo)
+        (on_list botOran Ice_Lolly)
+    
+
         ; non-weighable items
         (not (weighable Ice_Lolly))
         (not (weighable Pizza))

@@ -19,50 +19,50 @@ checking for cyclic := effects --- OK.
 ff: search configuration is EHC, if that fails then  best-first on 1*g(s) + 5*h(s) where
     metric is  plan length
 
-Cueing down from goal distance:   55 into depth [1]
-                                  53            [1]
-                                  51            [1]
+Cueing down from goal distance:   56 into depth [1]
+                                  55            [1]
+                                  54            [1][2]
+                                  50            [1]
                                   49            [1]
-                                  47            [1][2]
-                                  46            [1]
-                                  44            [1]
-                                  43            [1]
-                                  41            [1][2][3]
-                                  40            [1][2][3][4]
-                                  39            [1][2]
-                                  38            [1]
+                                  48            [1][2]
+                                  47            [1]
+                                  46            [1][2]
+                                  45            [1][2][3]
+                                  44            [1][2][3][4][5]
+                                  43            [1][2][3][4][5][6][7]
+                                  42            [1][2]
+                                  41            [1][2][3][4][5][6][7]
+                                  40            [1][2][3][4][5]
+                                  39            [1]
+                                  38            [1][2][3]
                                   37            [1]
-                                  36            [1][2]
-                                  35            [1]
-                                  34            [1][2][3][4]
-                                  33            [1][2][3][4]
-                                  32            [1]
-                                  31            [1]
-                                  30            [1][2]
-                                  29            [1]
-                                  28            [1][2][3][4][5][6][7][8]
-                                  27            [1][2][3][4][5][6][7][8][9][10]
-                                  26            [1][2][3][4][5][6][7][8]
-                                  25            [1][2][3][4]
-                                  24            [1][2][3][4][5][6][7][8][9][10]
-                                  23            [1][2]
-                                  22            [1][2]
-                                  21            [1][2][3][4][5][6][7][8]
-                                  20            [1][2]
-                                  19            [1][2]
-                                  18            [1][2][3][4][5][6][7][8][9][10][11]
-                                  17            [1]
-                                  15            [1]
-                                  14            [1]
-                                  12            [1]
-                                  11            [1][2][3][4][5]
+                                  36            [1][2][3][4]
+                                  35            [1][2][3][4][5][6]
+                                  34            [1][2][3]
+                                  29            [1][2]
+                                  28            [1][2]
+                                  27            [1]
+                                  26            [1]
+                                  25            [1]
+                                  24            [1]
+                                  23            [1]
+                                  22            [1]
+                                  21            [1]
+                                  20            [1]
+                                  19            [1][2][3]
+                                  18            [1][2][3][4][5][6][7][8][9][10][11][12]
+                                  17            [1][2][3][4][5]
+                                  16            [1][2][3][4][5][6][7][8][9][10]
+                                  15            [1][2][3][4][5]
+                                  14            [1][2][3][4][5][6][7][8][9][10]
+                                  13            [1]
+                                  12            [1][2]
                                   10            [1]
-                                   9            [1]
-                                   8            [1]
-                                   7            [1]
+                                   9            [1][2][3][4]
+                                   8            [1][2][3][4]
+                                   7            [1][2][3]
                                    6            [1]
                                    5            [1]
-                                   4            [1][2]
                                    3            [1]
                                    2            [1]
                                    1            [1]
@@ -71,121 +71,140 @@ Cueing down from goal distance:   55 into depth [1]
 ff: found legal plan as follows
 
 step    0: MOVE A20 A18 BOTBLUE
-        1: MOVE A18 A17 BOTBLUE
-        2: MOVE A17 A16 BOTBLUE
-        3: USE_BASKET A16 BOTBLUE
-        4: MOVE A19 A17 BOTORAN
-        5: MOVE A16 A15 BOTBLUE
-        6: MOVE A15 A12 BOTBLUE
-        7: MOVE A17 A16 BOTORAN
-        8: MOVE A16 A15 BOTORAN
-        9: MOVE A12 A5 BOTBLUE
-       10: PICK_UP_WITH_BASKET POTATO A5 SHELF4 BOTBLUE
-       11: MOVE A15 A12 BOTORAN
-       12: MOVE A12 A11 BOTORAN
-       13: PICK_UP KETCHUP A11 SHELF8 BOTORAN
-       14: MOVE A5 A12 BOTBLUE
-       15: MOVE A11 A10 BOTORAN
-       16: MOVE A12 A11 BOTBLUE
-       17: MOVE A10 A9 BOTORAN
-       18: MOVE A9 A14 BOTORAN
-       19: MOVE A11 A10 BOTBLUE
-       20: DROP KETCHUP A14 BOTORAN
-       21: MOVE A10 A9 BOTBLUE
-       22: MOVE A9 A4 BOTBLUE
-       23: WEIGH POTATO A4 BOTBLUE
-       24: MOVE A4 A9 BOTBLUE
-       25: MOVE A9 A10 BOTBLUE
-       26: MOVE A14 A9 BOTORAN
-       27: MOVE A9 A4 BOTORAN
-       28: PICK_UP CABBAGE A4 SHELF3 BOTORAN
-       29: WEIGH CABBAGE A4 BOTORAN
-       30: MOVE A4 A9 BOTORAN
-       31: MOVE A9 A14 BOTORAN
-       32: DROP CABBAGE A14 BOTORAN
-       33: CHECK_OUT CABBAGE A14 BOTORAN
-       34: MOVE A14 A9 BOTORAN
-       35: MOVE A9 A4 BOTORAN
-       36: MOVE A10 A9 BOTBLUE
-       37: MOVE A9 A14 BOTBLUE
-       38: DROP POTATO A14 BOTBLUE
-       39: PICK_UP_WITH_BASKET BREAD A14 SHELF7 BOTBLUE
-       40: DROP BREAD A14 BOTBLUE
-       41: MOVE A14 A9 BOTBLUE
-       42: MOVE A9 A10 BOTBLUE
-       43: MOVE A4 A9 BOTORAN
-       44: MOVE A9 A14 BOTORAN
-       45: CHECK_OUT BREAD A14 BOTORAN
-       46: MOVE A10 A11 BOTBLUE
-       47: MOVE A11 A12 BOTBLUE
-       48: MOVE A12 A5 BOTBLUE
-       49: MOVE A5 A6 BOTBLUE
-       50: MOVE A6 A7 BOTBLUE
-       51: MOVE A7 A8 BOTBLUE
-       52: TOP_UP A8 BOTBLUE
-       53: MOVE A8 A7 BOTBLUE
-       54: MOVE A7 A6 BOTBLUE
-       55: PICK_UP_WITH_BASKET TOOTHPASTE A6 SHELF5 BOTBLUE
-       56: PICK_UP_WITH_BASKET ICE_LOLLY A6 SHELF1 BOTBLUE
-       57: MOVE A6 A7 BOTBLUE
-       58: MOVE A7 A8 BOTBLUE
-       59: TOP_UP A8 BOTBLUE
-       60: TOP_UP A8 BOTBLUE
-       61: MOVE A8 A7 BOTBLUE
-       62: MOVE A7 A6 BOTBLUE
-       63: MOVE A6 A5 BOTBLUE
-       64: MOVE A5 A12 BOTBLUE
-       65: MOVE A12 A11 BOTBLUE
-       66: MOVE A11 A10 BOTBLUE
-       67: MOVE A14 A9 BOTORAN
-       68: MOVE A9 A4 BOTORAN
-       69: MOVE A10 A9 BOTBLUE
-       70: MOVE A9 A14 BOTBLUE
-       71: DROP TOOTHPASTE A14 BOTBLUE
-       72: DROP ICE_LOLLY A14 BOTBLUE
-       73: MOVE A14 A9 BOTBLUE
-       74: MOVE A9 A10 BOTBLUE
-       75: MOVE A4 A9 BOTORAN
-       76: MOVE A9 A14 BOTORAN
-       77: CHECK_OUT ICE_LOLLY A14 BOTORAN
-       78: MOVE A10 A11 BOTBLUE
-       79: MOVE A11 A12 BOTBLUE
-       80: MOVE A12 A5 BOTBLUE
-       81: MOVE A5 A6 BOTBLUE
-       82: MOVE A6 A7 BOTBLUE
-       83: PICK_UP_WITH_BASKET PIZZA A7 SHELF2 BOTBLUE
-       84: MOVE A7 A8 BOTBLUE
-       85: TOP_UP A8 BOTBLUE
-       86: MOVE A8 A7 BOTBLUE
-       87: PICK_UP_WITH_BASKET SHAMPOO A7 SHELF6 BOTBLUE
-       88: MOVE A7 A6 BOTBLUE
-       89: MOVE A6 A5 BOTBLUE
-       90: MOVE A5 A12 BOTBLUE
-       91: MOVE A12 A11 BOTBLUE
-       92: MOVE A11 A10 BOTBLUE
-       93: MOVE A14 A9 BOTORAN
-       94: MOVE A9 A4 BOTORAN
-       95: MOVE A10 A9 BOTBLUE
-       96: MOVE A9 A14 BOTBLUE
-       97: DROP PIZZA A14 BOTBLUE
-       98: DROP SHAMPOO A14 BOTBLUE
-       99: RETURN_BASKET A14 BOTBLUE
-      100: CHECK_OUT POTATO A14 BOTBLUE
-      101: CHECK_OUT KETCHUP A14 BOTBLUE
-      102: CHECK_OUT TOOTHPASTE A14 BOTBLUE
-      103: CHECK_OUT PIZZA A14 BOTBLUE
-      104: MOVE A14 A9 BOTBLUE
-      105: MOVE A9 A10 BOTBLUE
-      106: MOVE A4 A9 BOTORAN
-      107: MOVE A9 A14 BOTORAN
-      108: CHECK_OUT SHAMPOO A14 BOTORAN
+        1: USE_BASKET A19 BOTORAN
+        2: MOVE A18 A17 BOTBLUE
+        3: MOVE A17 A16 BOTBLUE
+        4: USE_BASKET A16 BOTBLUE
+        5: PICK_UP_WITH_BASKET TOOTHPASTE A16 SHELF5 BOTBLUE
+        6: MOVE A16 A15 BOTBLUE
+        7: MOVE A19 A17 BOTORAN
+        8: MOVE A17 A16 BOTORAN
+        9: MOVE A15 A12 BOTBLUE
+       10: MOVE A16 A15 BOTORAN
+       11: MOVE A12 A11 BOTBLUE
+       12: MOVE A11 A10 BOTBLUE
+       13: MOVE A15 A12 BOTORAN
+       14: MOVE A10 A9 BOTBLUE
+       15: MOVE A9 A14 BOTBLUE
+       16: DROP TOOTHPASTE A14 BOTBLUE
+       17: MOVE A14 A9 BOTBLUE
+       18: MOVE A9 A10 BOTBLUE
+       19: MOVE A10 A11 BOTBLUE
+       20: PICK_UP_WITH_BASKET POTATO A11 SHELF4 BOTBLUE
+       21: MOVE A11 A10 BOTBLUE
+       22: MOVE A10 A9 BOTBLUE
+       23: MOVE A9 A4 BOTBLUE
+       24: WEIGH POTATO A4 BOTBLUE
+       25: MOVE A4 A9 BOTBLUE
+       26: MOVE A9 A14 BOTBLUE
+       27: DROP POTATO A14 BOTBLUE
+       28: MOVE A12 A11 BOTORAN
+       29: MOVE A11 A10 BOTORAN
+       30: MOVE A10 A9 BOTORAN
+       31: MOVE A9 A4 BOTORAN
+       32: PICK_UP_WITH_BASKET CABBAGE A4 SHELF3 BOTORAN
+       33: WEIGH CABBAGE A4 BOTORAN
+       34: MOVE A4 A9 BOTORAN
+       35: MOVE A9 A10 BOTORAN
+       36: MOVE A10 A11 BOTORAN
+       37: MOVE A11 A12 BOTORAN
+       38: MOVE A12 A5 BOTORAN
+       39: MOVE A5 A6 BOTORAN
+       40: PICK_UP_WITH_BASKET ICE_LOLLY A6 SHELF1 BOTORAN
+       41: MOVE A6 A7 BOTORAN
+       42: MOVE A7 A8 BOTORAN
+       43: TOP_UP A8 BOTORAN
+       44: MOVE A8 A7 BOTORAN
+       45: PICK_UP_WITH_BASKET SHAMPOO A7 SHELF6 BOTORAN
+       46: MOVE A7 A8 BOTORAN
+       47: TOP_UP A8 BOTORAN
+       48: MOVE A8 A7 BOTORAN
+       49: MOVE A7 A6 BOTORAN
+       50: MOVE A6 A5 BOTORAN
+       51: MOVE A5 A12 BOTORAN
+       52: MOVE A12 A11 BOTORAN
+       53: MOVE A11 A10 BOTORAN
+       54: PICK_UP_WITH_BASKET BREAD A10 SHELF7 BOTORAN
+       55: MOVE A10 A9 BOTORAN
+       56: MOVE A9 A4 BOTORAN
+       57: MOVE A14 A9 BOTBLUE
+       58: MOVE A9 A10 BOTBLUE
+       59: MOVE A4 A9 BOTORAN
+       60: MOVE A9 A14 BOTORAN
+       61: DROP CABBAGE A14 BOTORAN
+       62: DROP BREAD A14 BOTORAN
+       63: DROP SHAMPOO A14 BOTORAN
+       64: DROP ICE_LOLLY A14 BOTORAN
+       65: RETURN_BASKET A14 BOTORAN
+       66: CHECK_OUT CABBAGE A14 BOTORAN
+       67: CHECK_OUT BREAD A14 BOTORAN
+       68: CHECK_OUT SHAMPOO A14 BOTORAN
+       69: CHECK_OUT ICE_LOLLY A14 BOTORAN
+       70: MOVE A14 A9 BOTORAN
+       71: MOVE A9 A4 BOTORAN
+       72: MOVE A10 A11 BOTBLUE
+       73: MOVE A11 A12 BOTBLUE
+       74: MOVE A4 A9 BOTORAN
+       75: MOVE A12 A5 BOTBLUE
+       76: MOVE A5 A6 BOTBLUE
+       77: MOVE A6 A7 BOTBLUE
+       78: MOVE A7 A8 BOTBLUE
+       79: TOP_UP A8 BOTBLUE
+       80: MOVE A8 A7 BOTBLUE
+       81: MOVE A7 A6 BOTBLUE
+       82: MOVE A6 A5 BOTBLUE
+       83: MOVE A5 A12 BOTBLUE
+       84: MOVE A12 A11 BOTBLUE
+       85: MOVE A11 A10 BOTBLUE
+       86: MOVE A9 A4 BOTORAN
+       87: MOVE A10 A9 BOTBLUE
+       88: MOVE A9 A14 BOTBLUE
+       89: RETURN_BASKET A14 BOTBLUE
+       90: CHECK_OUT POTATO A14 BOTBLUE
+       91: CHECK_OUT TOOTHPASTE A14 BOTBLUE
+       92: MOVE A14 A9 BOTBLUE
+       93: MOVE A9 A10 BOTBLUE
+       94: MOVE A10 A11 BOTBLUE
+       95: MOVE A11 A12 BOTBLUE
+       96: MOVE A12 A5 BOTBLUE
+       97: MOVE A4 A9 BOTORAN
+       98: MOVE A9 A10 BOTORAN
+       99: MOVE A10 A11 BOTORAN
+      100: MOVE A11 A12 BOTORAN
+      101: MOVE A5 A6 BOTBLUE
+      102: MOVE A6 A7 BOTBLUE
+      103: PICK_UP PIZZA A7 SHELF2 BOTBLUE
+      104: MOVE A7 A8 BOTBLUE
+      105: TOP_UP A8 BOTBLUE
+      106: MOVE A8 A7 BOTBLUE
+      107: MOVE A7 A6 BOTBLUE
+      108: MOVE A6 A5 BOTBLUE
+      109: MOVE A12 A11 BOTORAN
+      110: MOVE A11 A10 BOTORAN
+      111: MOVE A5 A12 BOTBLUE
+      112: MOVE A12 A11 BOTBLUE
+      113: MOVE A10 A9 BOTORAN
+      114: MOVE A11 A10 BOTBLUE
+      115: MOVE A9 A4 BOTORAN
+      116: MOVE A10 A9 BOTBLUE
+      117: MOVE A9 A14 BOTBLUE
+      118: DROP PIZZA A14 BOTBLUE
+      119: CHECK_OUT PIZZA A14 BOTBLUE
+      120: MOVE A14 A9 BOTBLUE
+      121: MOVE A9 A10 BOTBLUE
+      122: MOVE A10 A11 BOTBLUE
+      123: PICK_UP KETCHUP A11 SHELF8 BOTBLUE
+      124: MOVE A11 A10 BOTBLUE
+      125: MOVE A10 A9 BOTBLUE
+      126: MOVE A9 A14 BOTBLUE
+      127: DROP KETCHUP A14 BOTBLUE
+      128: CHECK_OUT KETCHUP A14 BOTBLUE
      
 
-time spent:    0.00 seconds instantiating 2252 easy, 48 hard action templates
-               0.00 seconds reachability analysis, yielding 162 facts and 264 actions
-               0.00 seconds creating final representation with 148 relevant facts, 2 relevant fluents
+time spent:    0.00 seconds instantiating 1180 easy, 48 hard action templates
+               0.00 seconds reachability analysis, yielding 146 facts and 186 actions
+               0.00 seconds creating final representation with 132 relevant facts, 2 relevant fluents
                0.00 seconds computing LNF
                0.00 seconds building connectivity graph
-               0.09 seconds searching, evaluating 3815 states, to a max depth of 11
-               0.09 seconds total time
-
+               0.07 seconds searching, evaluating 5296 states, to a max depth of 12
+               0.07 seconds total time
