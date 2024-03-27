@@ -75,6 +75,8 @@
         (checked_out Pizza)
         (at_item Shampoo shelf7)
         (at_item Ice_Lolly a8)
+        (at_item Bread shelf2)
+        (not (weighable Cabbage))
         (at ShopBot a8)
     ))
 )
