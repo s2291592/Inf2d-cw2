@@ -182,3 +182,124 @@ time spent:    0.01 seconds instantiating 2252 easy, 2736 hard action templates
                0.01 seconds building connectivity graph
                7.42 seconds searching, evaluating 13706 states, to a max depth of 12
                7.45 seconds total time
+
+
+
+
+
+
+
+ff: found legal plan as follows
+
+step    0: MOVE A20 A18 BOTBLUE
+        1: MOVE A18 A17 BOTBLUE
+        2: MOVE A17 A16 BOTBLUE
+        3: USE_BASKET A16 BOTBLUE
+        4: MOVE A19 A17 BOTORAN
+        5: MOVE A16 A15 BOTBLUE
+        6: MOVE A15 A12 BOTBLUE
+        7: MOVE A17 A16 BOTORAN
+        8: MOVE A16 A15 BOTORAN
+        9: MOVE A12 A5 BOTBLUE
+       10: PICK_UP_WITH_BASKET POTATO A5 SHELF4 BOTBLUE
+       11: MOVE A5 A12 BOTBLUE
+       12: MOVE A12 A5 BOTBLUE
+       13: MOVE A15 A12 BOTORAN
+       14: MOVE A12 A11 BOTORAN
+       15: PICK_UP KETCHUP A11 SHELF8 BOTORAN
+       16: MOVE A5 A12 BOTBLUE
+       17: MOVE A11 A10 BOTORAN
+       18: MOVE A12 A11 BOTBLUE
+       19: MOVE A10 A9 BOTORAN
+       20: MOVE A9 A14 BOTORAN
+       21: MOVE A11 A10 BOTBLUE
+       22: DROP KETCHUP A14 BOTORAN
+       23: MOVE A10 A9 BOTBLUE
+       24: MOVE A9 A4 BOTBLUE
+       25: WEIGH POTATO A4 BOTBLUE
+       26: MOVE A4 A9 BOTBLUE
+       27: MOVE A9 A10 BOTBLUE
+       28: MOVE A14 A9 BOTORAN
+       29: MOVE A9 A4 BOTORAN
+       30: PICK_UP CABBAGE A4 SHELF3 BOTORAN
+       31: WEIGH CABBAGE A4 BOTORAN
+       32: MOVE A4 A9 BOTORAN
+       33: MOVE A9 A14 BOTORAN
+       34: DROP CABBAGE A14 BOTORAN
+       35: CHECK_OUT CABBAGE A14 BOTORAN
+       36: MOVE A10 A11 BOTBLUE
+       37: MOVE A11 A12 BOTBLUE
+       38: MOVE A12 A5 BOTBLUE
+       39: MOVE A5 A3 BOTBLUE
+       40: RECHARGE_BOT A3 BOTBLUE
+       41: MOVE A3 A5 BOTBLUE
+       42: MOVE A5 A6 BOTBLUE
+       43: PICK_UP_WITH_BASKET TOOTHPASTE A6 SHELF5 BOTBLUE
+       44: PICK_UP_WITH_BASKET ICE_LOLLY A6 SHELF1 BOTBLUE
+       45: MOVE A6 A7 BOTBLUE
+       46: MOVE A7 A8 BOTBLUE
+       47: TOP_UP A8 BOTBLUE
+       48: TOP_UP A8 BOTBLUE
+       49: MOVE A8 A7 BOTBLUE
+       50: MOVE A7 A6 BOTBLUE
+       51: MOVE A6 A5 BOTBLUE
+       52: MOVE A5 A12 BOTBLUE
+       53: MOVE A12 A11 BOTBLUE
+       54: MOVE A11 A10 BOTBLUE
+       55: MOVE A14 A9 BOTORAN
+       56: MOVE A9 A4 BOTORAN
+       57: MOVE A10 A9 BOTBLUE
+       58: MOVE A9 A14 BOTBLUE
+       59: DROP POTATO A14 BOTBLUE
+       60: DROP TOOTHPASTE A14 BOTBLUE
+       61: MOVE A14 A9 BOTBLUE
+       62: MOVE A9 A10 BOTBLUE
+       63: MOVE A4 A9 BOTORAN
+       64: MOVE A10 A11 BOTBLUE
+       65: MOVE A11 A12 BOTBLUE
+       66: MOVE A12 A5 BOTBLUE
+       67: MOVE A5 A3 BOTBLUE
+       68: RECHARGE_BOT A3 BOTBLUE
+       69: MOVE A3 A5 BOTBLUE
+       70: MOVE A5 A6 BOTBLUE
+       71: MOVE A6 A7 BOTBLUE
+       72: PICK_UP_WITH_BASKET PIZZA A7 SHELF2 BOTBLUE
+       73: MOVE A7 A8 BOTBLUE
+       74: TOP_UP A8 BOTBLUE
+       75: TOP_UP A8 BOTBLUE
+       76: MOVE A8 A7 BOTBLUE
+       77: PICK_UP_WITH_BASKET SHAMPOO A7 SHELF6 BOTBLUE
+       78: MOVE A7 A6 BOTBLUE
+       79: MOVE A6 A5 BOTBLUE
+       80: MOVE A5 A12 BOTBLUE
+       81: MOVE A12 A11 BOTBLUE
+       82: MOVE A11 A10 BOTBLUE
+       83: PICK_UP_WITH_BASKET BREAD A10 SHELF7 BOTBLUE
+       84: MOVE A9 A4 BOTORAN
+       85: MOVE A10 A9 BOTBLUE
+       86: MOVE A9 A14 BOTBLUE
+       87: DROP PIZZA A14 BOTBLUE
+       88: DROP BREAD A14 BOTBLUE
+       89: DROP SHAMPOO A14 BOTBLUE
+       90: DROP ICE_LOLLY A14 BOTBLUE
+       91: RETURN_BASKET A14 BOTBLUE
+       92: CHECK_OUT POTATO A14 BOTBLUE
+       93: CHECK_OUT KETCHUP A14 BOTBLUE
+       94: CHECK_OUT TOOTHPASTE A14 BOTBLUE
+       95: CHECK_OUT PIZZA A14 BOTBLUE
+       96: MOVE A14 A9 BOTBLUE
+       97: MOVE A9 A10 BOTBLUE
+       98: MOVE A4 A9 BOTORAN
+       99: MOVE A9 A14 BOTORAN
+      100: CHECK_OUT BREAD A14 BOTORAN
+      101: CHECK_OUT SHAMPOO A14 BOTORAN
+      102: CHECK_OUT ICE_LOLLY A14 BOTORAN
+     
+
+time spent:    0.00 seconds instantiating 2286 easy, 48 hard action templates
+               0.00 seconds reachability analysis, yielding 162 facts and 266 actions
+               0.00 seconds creating final representation with 148 relevant facts, 4 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.78 seconds searching, evaluating 37021 states, to a max depth of 15
+               0.78 seconds total time
