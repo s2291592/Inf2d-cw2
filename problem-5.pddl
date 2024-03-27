@@ -20,6 +20,7 @@
 
         ; define the battery capacity
         (= (battery botBlue) 20) (= (battery botOran) 20)
+        (= (battery_consume botBlue) 30) (= (battery_consume botOran) 30)
 
 
         ; Define clear to ensure that two bots will not collide in the same place
