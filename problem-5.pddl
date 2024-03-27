@@ -4,7 +4,7 @@
 
 
         Ice_Lolly Pizza Cabbage Potato ToothPaste Shampoo Bread Ketchup - ShoppingItem
-        AisleCells shelves WeighingScale CheckoutStand BasketPlace AddCredit - location
+        AisleCells shelves WeighingScale CheckoutStand BasketPlace AddCredit RechargeStation - location
         shelf1 shelf2 shelf3 shelf4 shelf5 shelf6 shelf7 shelf8 - shelves
 
 
@@ -17,6 +17,9 @@
     )
     
     (:init
+
+        ; define the battery capacity
+        (= (battery botBlue) 20) (= (battery botOran) 20)
 
 
         ; Define clear to ensure that two bots will not collide in the same place
@@ -57,6 +60,7 @@
 
 
         ; adjacent relations
+        (adjacent a3 RechargeStation)
         (adjacent a8 AddCredit)
         (adjacent a16 BasketPlace) (adjacent a19 BasketPlace)
         (adjacent a1 WeighingScale) (adjacent a1 a2) (adjacent a1 shelf3)
@@ -97,7 +101,5 @@
         (checked_out Bread botOran)
         (checked_out Shampoo botOran)
         (checked_out Ice_Lolly botOran)
-        (not (hold_basket botBlue))
-        (not (hold_basket botOran))
     ))
 )

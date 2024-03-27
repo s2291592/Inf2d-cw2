@@ -6,7 +6,7 @@
 
 
   (:types 
-  AisleCells shelves WeighingScale CheckoutStand BasketPlace AddCredit - location
+  AisleCells shelves WeighingScale CheckoutStand BasketPlace AddCredit RechargeStation - location
   shopbot 
   ShoppingItem
   )
@@ -31,6 +31,7 @@
   (:functions
       (balance ?bot - shopbot) ; bot credit
       (price ?item - ShoppingItem) ; price of item
+      (battery ?bot - shopbot) ; the battery capacity of the robot
   )
 
 
@@ -44,8 +45,17 @@
 
   (:action MOVE
       :parameters (?from - AisleCells ?to - AisleCells ?bot - shopbot)
-      :precondition (and (at ?bot ?from) (adjacent ?from ?to) (clear ?to) (not (clear ?from)))
-      :effect (and (at ?bot ?to) (not (at ?bot ?from)) (clear ?from) (not (clear ?to)))
+      :precondition (and 
+      (at ?bot ?from) (adjacent ?from ?to) (clear ?to) (not (clear ?from))
+      (or 
+      (and (not(holding ?bot)) (>= (battery ?bot) 1))
+      (and (holding ?bot) (>= (battery ?bot) 2))
+      )
+      )
+      :effect (and (at ?bot ?to) (not (at ?bot ?from)) (clear ?from) (not (clear ?to))
+      (when (not(holding ?bot)) (decrease (battery ?bot) 1))
+      (when (holding ?bot) (decrease (battery ?bot) 2))
+      )
   )
 
   (:action trans_item
@@ -84,10 +94,16 @@
       :effect (and (increase (balance ?bot) 5))
   )
 
+  (:action recharge_bot
+      :parameters (?x - AisleCells ?bot - shopbot)
+      :precondition (and (at ?bot ?x) (adjacent ?x RechargeStation))
+      :effect (assign (battery ?bot) 20)
+  )
+
   (:action pick_up
     :parameters (?item - ShoppingItem ?x - AisleCells ?y - location ?bot - shopbot)
-    :precondition (and (at ?bot ?x) (>= (balance ?bot) (price ?item)) (at_item ?item ?y) (adjacent ?x ?y) (not (holding ?bot)))
-    :effect (and (holding ?bot) (hold ?bot ?item) (decrease (balance ?bot) (price ?item)))
+    :precondition (and (at ?bot ?x) (>= (balance ?bot) (price ?item)) (at_item ?item ?y) (adjacent ?x ?y) (>= (battery ?bot) 1) (not (holding ?bot)))
+    :effect (and (holding ?bot) (hold ?bot ?item) (decrease (battery ?bot) 1) (decrease (balance ?bot) (price ?item)))
   )
 
 
@@ -110,8 +126,8 @@
 
   (:action pick_up_with_basket
     :parameters (?item - ShoppingItem ?x - AisleCells ?y - location ?bot - shopbot)
-    :precondition (and (at ?bot ?x) (holding ?bot) (>= (balance ?bot) (price ?item)) (hold_basket ?bot) (at_item ?item ?y) (adjacent ?x ?y))
-    :effect (and (hold_in ?bot ?item) (decrease (balance ?bot) (price ?item)))
+    :precondition (and (at ?bot ?x) (holding ?bot) (>= (balance ?bot) (price ?item)) (>= (battery ?bot) 1) (hold_basket ?bot) (at_item ?item ?y) (adjacent ?x ?y))
+    :effect (and (hold_in ?bot ?item) (decrease (battery ?bot) 1) (decrease (balance ?bot) (price ?item)))
   )  
 
 
